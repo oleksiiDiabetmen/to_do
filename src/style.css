@@ -1,0 +1,161 @@
+:root {
+  --primary-color: #ba9ffb;
+  --secondary-color: #9171f8;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body,
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+body {
+  background-color: #575757;
+  padding: 0 20px 10px;
+}
+
+button,
+input {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-height: 10vh;
+}
+
+.newElementContent {
+  width: 270px;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-left: 5px;
+  font-size: 27px;
+  color: var(--primary-color);
+  cursor: text;
+}
+
+.add {
+  color: var(--primary-color);
+  font-size: 27px;
+}
+
+#main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list {
+  padding: 15px 10px 10px;
+  border-radius: 15px;
+  border: 1px solid var(--secondary-color);
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.list + .list {
+  margin-top: 15px;
+}
+
+.list-item {
+  position: relative;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary-color);
+  padding: 10px;
+}
+
+.list-item.pinned {
+  border-color: #01796f;
+  box-shadow: 0px 0px 10px #01796fbe;
+}
+
+.list-item.pinned::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.item-content {
+  font-size: 21px;
+  text-wrap: wrap;
+}
+
+.item-status {
+  height: 20px;
+  min-width: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.item-status.done {
+  background-color: #009000;
+  border: none;
+}
+
+.remove-pin {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: 40px;
+  column-gap: 10px;
+  background-color: #cccccc;
+  border-radius: inherit;
+}
+
+.button-functionals {
+  color: #ffffff;
+  height: 100%;
+  border-radius: inherit;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.pin {
+  background-color: #dddddddd;
+}
+
+.remove {
+  background-color: red;
+}
